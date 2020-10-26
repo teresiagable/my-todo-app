@@ -18,14 +18,11 @@ class Home extends Component {
   }
 
   render() {
-    if (this.state.loading) {
-      return "Jobbar";
-    } else
-      return (
-        <Fragment>
-          <Todos todolist={this.state.todos} />
-        </Fragment>
-      );
+    return this.state.loading ? (
+      <div>Loading</div>
+    ) : (
+      <Todos todolist={this.state.todos} />
+    );
   }
 }
 
