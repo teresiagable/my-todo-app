@@ -17,15 +17,14 @@ class todoService {
     console.log("value", value)
     var config = {
       method: "put",
-      url:
-        "https://nameless-sea-91978.herokuapp.com/api/todoItem/Example-TodoItem-1",
+      url: "https://nameless-sea-91978.herokuapp.com/api/todoItem/" + value.id,
       data: {
-        "id": value.id,
-        "title": value.title,
-        "description": value.description,
-        "deadline": value.deadline,
-        "done": value.done,
-        "assignee": value.assignee.id
+        id: value.id,
+        title: value.title,
+        description: value.description,
+        deadline: value.deadline,
+        done: value.done,
+        assignee: value.assignee.id,
       },
     };
     console.log("config", config)

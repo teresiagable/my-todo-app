@@ -15,6 +15,7 @@ const Todos = (props) => {
             <th>Description</th>
             <th>Assigned to</th>
             <th>Done</th>
+            <th></th>
           </tr>
         </thead>
         {props.todolist.map((todo) => (
@@ -47,6 +48,13 @@ export const TodoItem = (props) => {
             type="checkbox"
             checked={todo.done}
             onChange={(e) => props.updateDone(e, todo)}
+          />
+        </td>
+        <td>
+          <input
+            type="button"
+            className="btn btn-warning btn-sm"
+            value="Edit"
           />
         </td>
       </tr>

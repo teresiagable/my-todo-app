@@ -22,9 +22,20 @@ class Home extends Component {
     //console.log("e", e.target.checked);
 
     let newtodo = { ...todo, done: e.target.checked };
-    console.log("updated todo item", newtodo);
+    //console.log("updated todo item", newtodo);
     //här ska vi göra något med svaret sen.
     let response = todoService.updateDone(newtodo);
+
+    const itemIndex = this.state.todos.findIndex(
+      (todoItem) => ((todoItem.id == todo.id))
+    );
+
+    let newTodoList = [...this.state.todos];
+    newTodoList[itemIndex] = newtodo;
+
+    this.setState({
+      todos:newTodoList
+    })
   };
 
   render() {
