@@ -17,11 +17,21 @@ class Home extends Component {
     });
   }
 
+  toggleDone = (e, todo) => {
+    //console.log("togglevalue", todo);
+    //console.log("e", e.target.checked);
+
+    let newtodo = { ...todo, done: e.target.checked };
+    console.log("updated todo item", newtodo);
+    //här ska vi göra något med svaret sen.
+    let response = todoService.updateDone(newtodo);
+  };
+
   render() {
     return this.state.loading ? (
       <div>Loading</div>
     ) : (
-      <Todos todolist={this.state.todos} />
+      <Todos todolist={this.state.todos} updateDone={this.toggleDone} />
     );
   }
 }

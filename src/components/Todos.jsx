@@ -18,24 +18,21 @@ const Todos = (props) => {
           </tr>
         </thead>
         {props.todolist.map((todo) => (
-          <TodoItem key={todo.id} todo={todo} />
+          <TodoItem key={todo.id} todo={todo} updateDone={props.updateDone} />
         ))}
       </table>
     </>
   );
 };
 
-const toggleDone = (e) => {
-  console.log("click", e.target.value);
 
-  //här ska vi göra något med svaret sen.
-  let response = todoService.updateDone();
-};
 
 
 export const TodoItem = (props) => {
   let todo = props.todo;
   let date = new Date(todo.deadline);
+  let isChecked = todo.done ? "checked" : "";
+  //console.log("updateDone", props);
   return (
     <tbody>
       <tr className="table-secondary">
@@ -46,11 +43,15 @@ export const TodoItem = (props) => {
         <td>{todo.description}</td>
         <td>{`${todo.assignee.firstName} ${todo.assignee.lastName}`}</td>
         <td>
-          <input type="checkbox" checked={todo.done} onChange={toggleDone} />
+          <input
+            type="checkbox"
+            checked={todo.done}
+            onChange={(e) => props.updateDone(e, todo)}
+          />
         </td>
       </tr>
     </tbody>
   );
-};
+};;
 
 export default Todos;
