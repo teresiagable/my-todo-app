@@ -11,13 +11,13 @@ export default function Navbar() {
           </Link>
         </li>
         <li className='nav-item'>
-          <Link className='nav-link' to='/todolist'>
+          <Link className='nav-link' to='/todomain'>
             Todo list
           </Link>
         </li>
         <li className='nav-item'>
-          <Link className='nav-link' to='/users'>
-            Users
+          <Link className='nav-link' to='/charactermain'>
+            StarWar characters
           </Link>
         </li>
       </ul>
