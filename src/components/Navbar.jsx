@@ -20,6 +20,11 @@ export default function Navbar() {
             StarWar characters
           </Link>
         </li>
+        <li className='nav-item'>
+          <Link className='nav-link' to='/contextdemo'>
+            ContextDemo
+          </Link>
+        </li>
       </ul>
     </nav>
   );

@@ -6,9 +6,12 @@ import TodoMain from './components/TodoMain';
 import StarWarMain from './components/starwars/StarWarMain';
 import NotFound from './components/NotFound';
 import './App.css';
+import ContextDemo from "./components/ContextDemo";
+import DisplayContext from './context/DisplayContext';
 
 function App() {
   return (
+    <DisplayContext.Provider value={{ leastimportantcolumn: '99' , lightStyle:"bg-light", darkStyle: 'bg-info', colorStyle:"warning"}}>
     <div className='App'>
       <header className='App-header'>
         <Router>
@@ -24,6 +27,9 @@ function App() {
             <Route exact path='/charactermain'>
               <StarWarMain />
             </Route>
+            <Route exact path='/contextdemo'>
+              <ContextDemo />
+            </Route>
             <Route exact path='/'>
               <Home />
             </Route>
@@ -32,6 +38,8 @@ function App() {
         </Router>
       </header>
     </div>
+    </DisplayContext.Provider>
+
   );
 }
 
