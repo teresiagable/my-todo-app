@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import React from 'react';
-
+import { Button } from '@material-ui/core';
 const TodoList = (props) => {
   const [message, setMessage] = useState();
   //console.log('todos', props.todolist);
@@ -66,6 +66,9 @@ export const TodoItem = (props) => {
             className='btn btn-warning btn-sm'
             value='Edit'
           />
+          <Button variant='contained' color='primary' href={`/todo/${todo.id}`}>
+            Link
+          </Button>
         </td>
       </tr>
     </tbody>

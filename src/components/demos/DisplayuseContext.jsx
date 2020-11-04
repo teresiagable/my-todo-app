@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import DisplayContext from '../context/DisplayContext';
+import DisplayContext from '../../context/DisplayContext';
 
 export default function DisplayuseContext() {
   const theContext = useContext(DisplayContext);

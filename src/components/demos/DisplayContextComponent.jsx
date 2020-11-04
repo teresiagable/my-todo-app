@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import DisplayContext from '../context/DisplayContext';
+import DisplayContext from '../../context/DisplayContext';
 
 export default class DisplayContextComponent extends Component {
   render() {

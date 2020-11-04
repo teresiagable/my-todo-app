@@ -25,6 +25,16 @@ export default function Navbar() {
             ContextDemo
           </Link>
         </li>
+        <li className='nav-item'>
+          <Link className='nav-link' to='/usememo'>
+            useMemo
+          </Link>
+        </li>
+        <li className='nav-item'>
+          <Link className='nav-link' to='/usecallback'>
+            useCallback
+          </Link>
+        </li>
       </ul>
     </nav>
   );
