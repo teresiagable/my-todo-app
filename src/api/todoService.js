@@ -3,7 +3,29 @@ import axios from "axios";
 class todoService {
   async getAll() {
     return await axios
-      .get("https://nameless-sea-91978.herokuapp.com/api/todoItem")
+      .get('https://nameless-sea-91978.herokuapp.com/api/todoItem')
+      .then((response) => {
+        return response.data;
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  async getTodoItem(id) {
+    return await axios
+      .get('https://nameless-sea-91978.herokuapp.com/api/todoItem?type=id&value=' +id)
+      .then((response) => {
+        return response.data;
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  async getAllUsers() {
+    return await axios
+      .get('https://nameless-sea-91978.herokuapp.com/api/appUser')
       .then((response) => {
         return response.data;
       })
@@ -13,11 +35,10 @@ class todoService {
   }
 
   async updateDone(value) {
-
-    console.log("value", value)
+    console.log('value', value);
     var config = {
-      method: "put",
-      url: "https://nameless-sea-91978.herokuapp.com/api/todoItem/" + value.id,
+      method: 'put',
+      url: 'https://nameless-sea-91978.herokuapp.com/api/todoItem/' + value.id,
       data: {
         id: value.id,
         title: value.title,
@@ -27,7 +48,7 @@ class todoService {
         assignee: value.assignee.id,
       },
     };
-    console.log("config", config)
+    console.log('config', config);
 
     return await axios(config)
       .then(function (response) {

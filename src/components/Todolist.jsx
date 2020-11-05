@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import React from 'react';
 import { Button } from '@material-ui/core';
+
 const TodoList = (props) => {
   const [message, setMessage] = useState();
   //console.log('todos', props.todolist);
@@ -61,13 +62,19 @@ export const TodoItem = (props) => {
           />
         </td>
         <td>
-          <input
+          {/* <input
             type='button'
             className='btn btn-warning btn-sm'
             value='Edit'
-          />
-          <Button variant='contained' color='primary' href={`/todo/${todo.id}`}>
-            Link
+          /> */}
+
+          {/* ${todo.id}  kommer att plockas upp av useParams i todoitemForm */}
+          <Button
+            variant='contained'
+            className='btn btn-warning btn-sm'
+            href={`/todoitemform/${todo.id}`}
+          >
+            Edit
           </Button>
         </td>
       </tr>
