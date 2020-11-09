@@ -48,7 +48,11 @@ const TodoMain = (props) => {
 
   const toggleDone = async (e, todo) => {
 
-    let newtodo = { ...todo, done: e.target.checked };
+    let newtodo = {
+      ...todo,
+      assignee: todo.assignee.id,
+      done: e.target.checked,
+    };
     let response = await todoService.updateDone(newtodo);
 
     const itemIndex = currentState.todos.findIndex(

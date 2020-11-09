@@ -9,6 +9,7 @@ class todoService {
       })
       .catch((error) => {
         console.log(error);
+        throw new Error(error);
       });
   }
 
@@ -20,6 +21,7 @@ class todoService {
       })
       .catch((error) => {
         console.log(error);
+        throw new Error(error);
       });
   }
 
@@ -31,6 +33,7 @@ class todoService {
       })
       .catch((error) => {
         console.log(error);
+        throw new Error(error);
       });
   }
 
@@ -45,7 +48,7 @@ class todoService {
         description: value.description,
         deadline: value.deadline,
         done: value.done,
-        assignee: value.assignee.id,
+        assignee: value.assignee, //detta är assignee.id
       },
     };
     console.log('config', config);
@@ -56,6 +59,7 @@ class todoService {
       })
       .catch(function (error) {
         console.log(error);
+        throw new Error(error);
       });
   }
 }

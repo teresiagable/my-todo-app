@@ -13,8 +13,9 @@ const TodoList = (props) => {
   // Changing the title every time the message changes is a side-effect,
   // so it needs to go in `useEffect`
   useEffect(() => {
-    console.log('nytt message', message);
+    //console.log('nytt message', message);
     document.title = message;
+    //throw new Error('Ojojoj');
   }, [message]);
 
   return (
