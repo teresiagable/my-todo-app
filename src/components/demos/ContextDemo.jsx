@@ -12,12 +12,3 @@ export default class ContextDemo extends Component {
     );
   }
 }
-
-
-const divStyle = {
-  width: '100%',
-};
-
-function HelloWorldComponent() {
-  return <div style={divStyle}>Hello World!</div>;
-}
