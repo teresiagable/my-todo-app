@@ -45,7 +45,6 @@ const TodoMain = (props) => {
   }, []);
 
   const toggleDone = async (e, todo) => {
-
     // spara värdet på inkommande checkbox för att det inte ska ändras  (av någon oförklarlig orsak)
     const newDoneValue = e.target.checked;
     //skapa ett todo-item i det format som servicen (och i sin tur APIet) vill ha
@@ -80,7 +79,6 @@ const TodoMain = (props) => {
     });
   };
 
-  console.log('innan loading', lightTheme);
   return currentState.loading ? (
     <div>
       <Loader

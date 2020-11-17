@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default function Navbar() {
   return (
-    <nav className='navbar navbar-expand-lg navbar-secondary bg-secodary'>
+    <nav className='navbar navbar-expand-md navbar-secondary bg-secodary'>
       <ul className='navbar-nav mr-auto '>
         <li className='nav-item'>
           <Link className='nav-link' to='/home'>
@@ -26,6 +26,11 @@ export default function Navbar() {
           </Link>
         </li>
         <li className='nav-item'>
+          <Link className='nav-link' to='/statedemo'>
+            State Demo
+          </Link>
+        </li>
+        {/* <li className='nav-item'>
           <Link className='nav-link' to='/usememo'>
             useMemo
           </Link>
@@ -34,7 +39,7 @@ export default function Navbar() {
           <Link className='nav-link' to='/usecallback'>
             useCallback
           </Link>
-        </li>
+        </li> */}
       </ul>
     </nav>
   );
